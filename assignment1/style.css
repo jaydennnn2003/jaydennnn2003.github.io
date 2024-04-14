@@ -24,13 +24,13 @@ nav {
   flex: 1;
   justify-content: space-around;
   align-items: center;
-  margin: 30px 20px;
+  padding: 30px 20px;
   list-style-type: none;
   font-size: 1.2rem;
 }
 
 .navbarlist {
-  padding: 1rem;
+  padding: 16px;
 }
 
 .navbarlist:hover {
@@ -40,11 +40,23 @@ nav {
   border-radius: 8px;
 }
 
+a:link {
+  color: white;
+  text-decoration: none;
+  z-index: -1;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+  z-index: -1;
+}
+
 h1 {
   display: flex;
   justify-content: center;
   padding: 30px 0;
-  font-family: "Alegreya";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
