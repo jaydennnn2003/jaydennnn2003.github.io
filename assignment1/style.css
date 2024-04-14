@@ -1,3 +1,5 @@
+/* setting the background image as a faded colour. setting the font and giving the entire website a margin to give it a cleaner look */
+
 body {
   background-image: linear-gradient(
     to left bottom,
@@ -42,6 +44,7 @@ h1 {
   display: flex;
   justify-content: center;
   padding: 30px 0;
+  font-family: "Alegreya";
 }
 
 h2 {
@@ -49,6 +52,14 @@ h2 {
   justify-content: center;
   padding: 0 0 30px 0;
   color: white;
+}
+
+/* gets rid of dfault margin padding and dot */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* this is effectively were the container will do its flip. I have chosen min height 
@@ -71,6 +82,7 @@ h2 {
   text-align: left;
   transition: transform 0.9s;
   transform-style: preserve-3d;
+  animation: foward 2s;
 }
 
 /* As the cursor hovers over the card/container the card transforms along its y axis or verticaly. 
@@ -81,12 +93,15 @@ this can easily be change to horizontally be rotating along the x axis */
   position: absolute;
 }
 
-.flip-card:hover .flip-card-front {
-  display: none;
+/* this ensures that when the card is being hovered over it is the top layer */
+
+.flip-card:hover {
+  z-index: 1;
 }
 
 /* this is here to ensure that when the card is flipped it stay in position. the absolute 
-value means that once flipped the card stays in the same position */
+value means that once flipped the card stays in the same position the backface hidden section 
+means that only one side of the flip card will be visible at any certain time */
 
 .flip-card-front,
 .flip-card-back {
@@ -104,20 +119,21 @@ value means that once flipped the card stays in the same position */
   padding: 20px;
 }
 
-/* Styling only the back side of the card */
+/* Styling only the back side of the card keeping the back of the card facing backwards with the 180 degrees */
 .flip-card-back {
   background-color: white;
   color: black;
   transform: rotateY(180deg);
   border-radius: 10px;
   padding: 20px;
+  font-size: 0.9rem;
 }
 
 /* This grid container puts all the flip cards into a grid format with 3 columns and to style the grid itself */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 0 50px;
   background-color: transparent;
   padding: 10px;
   margin: 50px;
@@ -126,4 +142,14 @@ value means that once flipped the card stays in the same position */
 .grid-container > * {
   width: 100%;
   height: 100%;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 20px;
+  list-style-type: none;
+  font-size: 1.2rem;
 }
