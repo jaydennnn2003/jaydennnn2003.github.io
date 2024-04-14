@@ -1,0 +1,129 @@
+body {
+  background-image: linear-gradient(
+    to left bottom,
+    #709bbe,
+    #58a8bf,
+    #50b3b4,
+    #66bb9f,
+    #8cbf87
+  );
+  background-repeat: no-repeat;
+  color: white;
+  margin: 0 15%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background-color: transparent;
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 20px;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.navbarlist {
+  padding: 1rem;
+}
+
+.navbarlist:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 30px 0;
+  color: white;
+}
+
+/* this is effectively were the container will do its flip. I have chosen min height 
+ to be 200px as it creates a nice even rectangle or the content to fit inside of the 
+ prespective gives the flip itslf a flip type of animation rather than a sliding motion */
+
+.flip-card {
+  background-color: transparent;
+  width: 25%;
+  min-height: 200px;
+  perspective: 2000px;
+}
+
+/* The inner flip card is there to position the front and the back of the container */
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+}
+
+/* As the cursor hovers over the card/container the card transforms along its y axis or verticaly. 
+this can easily be change to horizontally be rotating along the x axis */
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg) scale(1.3);
+  position: absolute;
+}
+
+.flip-card:hover .flip-card-front {
+  display: none;
+}
+
+/* this is here to ensure that when the card is flipped it stay in position. the absolute 
+value means that once flipped the card stays in the same position */
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  backface-visibility: hidden;
+}
+
+/* styling only the front side of the card */
+.flip-card-front {
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+}
+
+/* Styling only the back side of the card */
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* This grid container puts all the flip cards into a grid format with 3 columns and to style the grid itself */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: transparent;
+  padding: 10px;
+  margin: 50px;
+}
+
+.grid-container > * {
+  width: 100%;
+  height: 100%;
+}
