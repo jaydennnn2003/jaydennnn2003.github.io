@@ -1,0 +1,56 @@
+* {
+}
+
+body {
+  border: 5px solid brown;
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0, "XOPQ" 96, "XTRA" 468,
+    "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: dotted;
+  text-transform: uppercase;
+  color: blueviolet;
+  padding: 50px 0 30px 0;
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  text-align: center;
+  color: lightblue;
+}
+
+p {
+  color: purple;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.my-colors {
+  color: darkcyan;
+  font-size: 1rem;
+}
+
+/* #session-times {
+  color: blue;
+  padding: 50px 50px;
+} */
+
+#session-times {
+  color: blue;
+  padding: 50px 50px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+[data-heading="learning"] {
+  color: black;
+}
