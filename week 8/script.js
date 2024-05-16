@@ -3,6 +3,10 @@
 const myVideo = document.querySelector("#my-video");
 console.log(myVideo);
 
+//removes the default controls for the video
+
+myVideo.removeAttribute("controls");
+
 const playPauseButton = document.querySelector("#play-pause-button");
 console.log(myVideo);
 
@@ -12,7 +16,8 @@ console.log(playPauseImg);
 // this funstion will play and pause the video by clicking on it
 
 // myVideo.addEventListener("click", toggleVideo);
-playPauseButton.addEventListener("click", toggleVideo);
+
+playPauseButton.addEventListener("click", "keydown", toggleVideo);
 
 function toggleVideo() {
   if (myVideo.paused || myVideo.ended) {

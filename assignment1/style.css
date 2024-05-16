@@ -15,6 +15,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* organising the nav bar with links to future projects */
+
 nav {
   background-color: transparent;
 }
@@ -43,13 +45,20 @@ nav {
 a:link {
   color: white;
   text-decoration: none;
-  z-index: -1;
+  padding: 16px;
 }
 
 a:visited {
   color: white;
   text-decoration: none;
-  z-index: -1;
+  padding: 16px;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
 }
 
 h1 {
