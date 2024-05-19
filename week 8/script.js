@@ -13,11 +13,15 @@ console.log(myVideo);
 const playPauseImg = document.querySelector("#play-pause-img");
 console.log(playPauseImg);
 
-// this funstion will play and pause the video by clicking on it
+// this funstion will play and pause the video by clicking on either the play pause button or the video itself
 
 // myVideo.addEventListener("click", toggleVideo);
 
-playPauseButton.addEventListener("click", "keydown", toggleVideo);
+playPauseButton.addEventListener("click", toggleVideo);
+
+myVideo.addEventListener("click", toggleVideo);
+
+myVideo.addEventListener("keydown", toggleVideo);
 
 function toggleVideo() {
   if (myVideo.paused || myVideo.ended) {
@@ -93,4 +97,32 @@ step2Button.addEventListener("click", goToStep2);
 
 function goToStep2() {
   myVideo.currentTime = 25.0;
+}
+
+$("#volume").slider({
+  min: 0,
+  max: 100,
+  value: 0,
+  range: "min",
+  slide: function (event, ui) {
+    setVolume(ui.value / 100);
+  },
+});
+
+var myMedia = document.createElement("audio");
+$("#player").append(myMedia);
+myMedia.id = "myMedia";
+
+playAudio("zenscap.mp4", 0);
+
+function playAudio(fileName, myVolume) {
+  myMedia.src = zenscape.mp4;
+  myMedia.setAttribute("loop", "loop");
+  setVolume(myVolume);
+  myMedia.play();
+}
+
+function setVolume(myVolume) {
+  var myMedia = document.getElementById("myMedia");
+  myMedia.volume = myVolume;
 }
