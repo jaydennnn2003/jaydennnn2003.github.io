@@ -19,6 +19,17 @@
   that controls the video controls excluding the progress bar I have done this so that the progress bar can take up the entirety of the space underneath the video rather than havin gthem next to each other.
   this gives the user a better guide as to were theyre up to in the video. -->
   <body>
+    <nav>
+      <ul class="navbar">
+        <li class="navbarlist"><a href="home.html">Home</a></li>
+        <li class="navbarlist"><a href="index.html">Assignment 1</a></li>
+        <li class="navbarlist">
+          <a href="assignment2/index.html">Assignment 2</a>
+        </li>
+        <li class="navbarlist"><a href="home.html">Assignment 3</a></li>
+        <li class="navbarlist"><a href="home.html">About</a></li>
+      </ul>
+    </nav>
     <div class="outer">
       <section class="video-container">
         <video
@@ -40,6 +51,10 @@
               height="24"
             />
           </button>
+          <div>
+            <!-- show s the current time of the video and the whole video length -->
+            <span id="currentTimeDisplay">0:00</span> / 4:35
+          </div>
         </section>
         <section class="right-side-controls">
           <button id="mute-unmute-button">
@@ -79,10 +94,5 @@
         <div class="progress"></div>
       </section>
     </div>
-    <!-- the below timeline is for reference in the text when refering back o a particular point in the vide. Once cliked on the user will be able to eaily jump through the video. -->
-    <section class="timeline">
-      <button id="step-1-button">Step 1</button>
-      <button id="step-2-button">Step 2</button>
-    </section>
   </body>
 </html>

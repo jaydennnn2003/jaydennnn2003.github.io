@@ -2,10 +2,75 @@ html {
   color-scheme: light;
 }
 
+/* setting the background image as a faded colour. setting the font and giving the entire website a margin to give it a cleaner look */
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background-image: linear-gradient(
+    to left bottom,
+    #709bbe,
+    #58a8bf,
+    #50b3b4,
+    #66bb9f,
+    #8cbf87
+  );
+  background-repeat: no-repeat;
+  color: white;
+  margin: 0 15%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* organising the nav bar with links to future projects */
+
+nav {
+  background-color: transparent;
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 20px;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.navbarlist {
+  padding: 16px;
+}
+
+.navbarlist:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .video-container {
@@ -26,8 +91,10 @@ video {
   background-color: transparent;
 }
 
+/* styling the progress bar so that the height is right and inline with the video */
+
 .progress-bar {
-  background-color: lightgrey;
+  background-color: white;
   cursor: pointer;
   position: relative;
   width: 100%;
@@ -39,6 +106,8 @@ video {
   border: 1px;
 }
 
+/* creating a cool colour for the  */
+
 .progress {
   background-color: rgb(106, 36, 141);
   height: 100%;
@@ -48,17 +117,21 @@ video {
   width: 0;
 }
 
+/* controls that lie underneath the video */
+
 .video-controls {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   max-width: 800px;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
 }
+
+/* the individual control buttons themselves. tthis is where i can change the cursor to a pointer or example */
 
 .video-controls button {
   background-color: transparent;
@@ -69,9 +142,19 @@ video {
   transition: opacity 0.3s;
 }
 
+/* gives the effect that the hover has an effect on the button and along with the pointer tells the user this is a button */
+
 .video-controls button:hover {
   opacity: 0.5;
 }
+
+.left-side-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* giving the controls a little bit of a gap between buttons and making sure they are aligned properly */
 
 .right-side-controls {
   display: flex;
@@ -83,6 +166,8 @@ video {
   align-items: center;
 }
 
+/* giving the volume slider stling simailar to that of the buttons */
+
 #volume-slider {
   appearance: none;
   width: 100px;
@@ -93,6 +178,7 @@ video {
   cursor: pointer;
   align-items: center;
   margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -102,4 +188,15 @@ input[type="range"]::-webkit-slider-thumb {
   background: black;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 20px;
+  padding-top: ;
+  list-style-type: none;
+  font-size: 1.2rem;
 }
