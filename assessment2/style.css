@@ -19,7 +19,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* organising the nav bar with links to future projects */
+/* organising the nav bar with links to non existant link */
 
 nav {
   background-color: transparent;
@@ -69,8 +69,9 @@ h1 {
   display: flex;
   justify-content: center;
   padding: 30px 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .video-container {
@@ -106,7 +107,7 @@ video {
   border: 1px;
 }
 
-/* creating a cool colour for the  */
+/* creating a cool colour for the progress. I have made the colour somewhat similar to that o the origami paper he is using */
 
 .progress {
   background-color: rgb(106, 36, 141);
@@ -195,8 +196,7 @@ input[type="range"]::-webkit-slider-thumb {
   flex: 1;
   justify-content: space-around;
   align-items: center;
-  margin: 30px 20px;
-  padding-top: ;
+  margin: 150px 20px 30px 20px;
   list-style-type: none;
   font-size: 1.2rem;
 }
