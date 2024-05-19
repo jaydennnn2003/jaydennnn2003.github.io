@@ -1,5 +1,7 @@
 //getteing all of the elements from index.html and creating there "own code" for the javascript. Both getElementById and QuerySelector were used here. These were used
 // to see if there would be a difference between the two as a sort of experiment. The console.log is to identify problems in the google chrome inspect tool
+// I have chosen to keep some aspects out of the website to keep it seemleess with little but function aspects. for example i have chosen to use a volume slider rather than buttons
+// because it is more functional or the user. I have chosen to incorporate an interactive progress bar rather than fast forward or backward buttons, or instead of clik step1, step2 etc.
 
 const video = document.getElementById("video");
 console.log(video);
@@ -19,6 +21,8 @@ const muteUnmuteImg = document.querySelector("#mute-unmute-img");
 console.log(muteUnmuteImg);
 const fullscreenButton = document.querySelector("#fullscreen-button");
 console.log(fullscreenButton);
+const currentTimeDisplay = document.getElementById("currentTimeDisplay");
+console.log(currentTimeDisplay);
 
 // adding event listeners to the certain elements. For example in the below event listener we ask to bring the play pause button from above and when we "click" this element
 // on the active website it tells the theplaPauseButton to toggle video. This applies to all of the event listeners in this code whether that be a mousedown action or an input action.
@@ -38,6 +42,19 @@ function toggleVideo() {
     video.pause();
     playPauseImg.src = "https://img.icons8.com/ios-glyphs/30/play--v2.png";
   }
+}
+
+// the below function is to format the time in minutes and seconds so that the the seconds dont become confusing after 60s and with the html element this is made to llo like it is .../...
+// similar to youtube or other interfaces.
+
+video.addEventListener("timeupdate", function () {
+  currentTimeDisplay.textContent = formatTime(video.currentTime);
+});
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
 
 //this function will mute or unmute the video by clicking
