@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Visualization with Melody</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Visual Sympathy</h1>
+    <div id="fileNameDisplay">No file selected</div>
+    <div id="visualizerContainer">
+      <canvas id="audioCanvas"></canvas>
+      <button id="fullscreenButton">
+        <!-- icons from ICONS8 -->
+        <img
+          id="fullscreen-img"
+          src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png"
+          alt="Fullscreen"
+          width="24"
+          height="24"
+        />
+      </button>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+    <button onclick="startVisualization()">Select Music</button>
+    <div class="footer">
+      <section>Icons By <span href="https://icons8.com/">ICONS8</span></section>
+      <section>
+        Gradient by <span href="https://coolors.co/">Coolors.co</span>
+      </section>
+    </div>
+  </body>
+</html>
