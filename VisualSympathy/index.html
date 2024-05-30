@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Visualization with Melody</title>
+    <title>Visual Sympathy</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -24,13 +24,19 @@
         />
       </button>
     </div>
+
     <audio id="audioPlayer" controls></audio>
-    <button onclick="startVisualization()">Select Music</button>
+
+    <button id="musicSelector" onclick="startVisualization()">
+      Select File
+    </button>
+
     <div class="footer">
-      <section>Icons By <span href="https://icons8.com/">ICONS8</span></section>
+      <section>Icons By <a href="https://icons8.com/">ICONS8</a></section>
       <section>
-        Gradient by <span href="https://coolors.co/">Coolors.co</span>
+        Gradient by <a href="https://coolors.co/">Coolors.co</a>
       </section>
+      <section>Project by Jayden</section>
     </div>
   </body>
 </html>
