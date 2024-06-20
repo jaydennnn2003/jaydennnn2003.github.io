@@ -4,25 +4,34 @@ body {
   background-color: #f0f0f0;
   line-height: 1.75;
   font-size: 1.2rem;
-  overflow-x: ;
-  :hidden ;
+  overflow-x: hidden;
+  color: black;
 }
+
+/* basic stling to the headers makin them match the theme of cookies */
 
 h2 {
   font-size: 4rem;
   text-align: center;
-  font-family: Helvetica, Arial, sans-serif;
   font-weight: 800;
+  text-shadow: 4px 4px white;
 }
 
 h3 {
   font-size: 1.8rem;
   text-align: left;
-  font-family: Helvetica, Arial, sans-serif;
   font-weight: 800;
   margin: auto;
   padding: 1.5rem;
 }
+
+/* I wanted something at the start of the website that would immediatly excite the user and who doesnt love cookies.
+Because of this I have created a parallax affect that immitates falling cookies when the user scrolls. This parallex effect
+was created with an animation tiimeline which allows me to control the speed at which the cookies fall. In this case I 
+have made the illusion by making the small cookies fall slower and contain a lower z-index giving them the illusion they are 
+in the back grounnd and vise versa for the cookies that are closer. These will fall faster and have i higher z-index. I 
+believe this has created a nice affect that looks likee raining cookies. 
+For this animation affect I got inspiration from Kevin Powell https://www.youtube.com/watch?v=Qj0Qx8HpNUo&t=905s */
 
 .parallax {
   position: relative;
@@ -38,11 +47,17 @@ h3 {
   animation-timeline: scroll();
 }
 
+/* I opted out of having a nav bar for this example as I wanted the user to be immersed within the "cookie rain" rather than
+looking at what the nav bar contains. I have left this option here incase of any future changes */
+
 .nav-bar,
 .hero {
   --parallax-speed: 10;
   z-index: 6;
 }
+
+/* i wanted to incorporate the header within the falling cookie and have done so by putting the header in the middle
+and having a cookie falling in front of the title */
 
 .parallax-page-header {
   z-index: 4;
@@ -66,9 +81,11 @@ h3 {
   text-shadow: 5px 5px #ffffff;
 }
 
+/* all the different cookie locations, size, parallax speed and z-index */
+
 .parallax-dotty {
   z-index: 5;
-  --parallax-speed: 20;
+  --parallax-speed: 23;
   position: absolute;
   width: 35vw;
   left: 35vw;
@@ -174,6 +191,10 @@ h3 {
   opacity: 0.5;
 }
 
+/* once the user has scrolled past the initial page I needed the coookies to land somewhere and thought what better way to cut them off
+than using "milk" I created a shape in illustrator attempting to simulate milk mid movement. Future enhancements to the project ma include
+creating splashes as the cookies fall in and moving milk, however, for noe I have kept it simple and have drawn a line immitating milk movement.*/
+
 .parallax-milk {
   z-index: 10;
   --parallax-speed: -3;
@@ -182,22 +203,30 @@ h3 {
   top: 120vh;
 }
 
+/* gap after the history revealing a little bit more of the cookies which also allows the page to be broen up slightly */
+
 .parallax-milk2 {
   z-index: 6;
   width: 100vw;
+  top: 1000vh;
 }
 
 .parallax-milk3 {
   z-index: 6;
   width: 100vw;
-  top: 150vh;
 }
+
+/* allows the animation of the parallax effect */
 
 @keyframes parallax {
   to {
     transform: translateY(calc(var(--parallax-speed) * 200px));
   }
 }
+
+/* after the main content i needed to add in some content to fill the empty space that follows. 
+In the future this section may be used as a shopping site to b cookies online using a display: grid; or a bit of information about the company.
+For now I have left it with some info about the history.  */
 
 .main-content {
   position: relative;
@@ -219,14 +248,16 @@ h3 {
   background-color: #eceadb;
 }
 
+/* used with javascript to create the transition of the text entering the screen. It created a subtle but engaging little element to the design. */
+
 .hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 0.6s;
+  transition: all 0.4s;
 }
 
-/* Continuing from previous CSS */
+/* bringing int the text from the left hand side */
 
 .show {
   opacity: 1;
@@ -234,18 +265,38 @@ h3 {
   transform: translateX(0);
 }
 
-.logos {
+/* used to create the staggered affect of the jars coming into frame. just another small design element that keeps the page interesting 
+i got inspiration or this affect from  https://www.youtube.com/watch?v=T33NN_pPeNI */
+
+.jars {
   display: flex;
+  justify-content: space-evenly;
 }
 
-.logo:nth-child(2) {
-  transition-delay: 200ms;
+.jar {
+  margin: 20px 0;
+  max-width: 18vw;
 }
 
-.logo:nth-child(3) {
+.jar:nth-child(2) {
   transition-delay: 400ms;
 }
 
-.logo:nth-child(4) {
+.jar:nth-child(3) {
   transition-delay: 600ms;
+}
+
+.jar:nth-child(4) {
+  transition-delay: 800ms;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer {
+  padding: 80px 0 50px 0;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
